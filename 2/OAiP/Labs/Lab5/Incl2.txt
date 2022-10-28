@@ -1,0 +1,22 @@
+// Sum* of two matrices
+// Take sign value.
+// If Sign = true, result is sum
+// If Sign = false, result is difference
+function sumMatrix(M1, M2: TMatrix; Sign: Boolean) : TMatrix;
+var
+  i,j: Integer;
+begin
+  if(Sign) then
+  begin
+    for i := 1 to 3 do
+      for j := 1 to 3 do
+        Result[i,j] := M1[i,j] + M2[i,j];
+  end
+  else
+  begin
+    for i := 1 to 3 do
+      for j := 1 to 3 do
+        Result[i,j] := M1[i,j] - M2[i,j];
+  end;
+
+end;

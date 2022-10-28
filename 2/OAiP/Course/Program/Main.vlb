@@ -1,0 +1,26 @@
+﻿[ads1]
+Coordinates=173,105,40,33
+
+[Edit1]
+Coordinates=65,123,40,33
+
+[Help1]
+Coordinates=16,123,42,33
+
+[Frame11.Readlists]
+Coordinates=130,60,105,51
+
+[Frame11.Button_Readlists]
+Coordinates=446,170,144,51
+
+[]
+Coordinates=21,52,40,33
+
+[Module Settings]
+ModelLayerNames=NewLayer0
+ActiveLayerNames=NewLayer0
+EditingLayerName=
+
+[MainMenu]
+Coordinates=0,0,70,33
+
