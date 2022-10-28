@@ -1,0 +1,12 @@
+{
+    "files.associations": {
+        "tuple": "c",
+        "array": "c",
+        "string_view": "c",
+        "initializer_list": "c",
+        "valarray": "c",
+        "sstream": "c",
+        "random": "c",
+        "mystring.h": "c"
+    }
+}
