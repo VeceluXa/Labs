@@ -3,7 +3,7 @@
 
 #include <stdlib.h>
 
-extern struct Node {
+struct Node {
     int data;
     struct Node* next;
 };

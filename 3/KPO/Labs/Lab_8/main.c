@@ -3,18 +3,18 @@
 
 void task() {
     struct Node* list;
-    list = malloc(sizeof(struct Node));
+    list = (struct Node*) malloc(sizeof(struct Node));
     list->data = 20;
 
     insert(list, 15);
     insert(list, 32);
     insert(list, 5);
     insert(list, -12);
-    insert(list, 11);
-    insert(list, 5);
+    insert(list, 11131);
+    insert(list, -1211);
     insert(list, 55);
-    insert(list, -1);
-    insert(list, 10);
+    insert(list, -10);
+    insert(list, -110);
 
     int minPos = 0;
     int maxPos = 0;
