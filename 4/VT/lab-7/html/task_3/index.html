@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Emailer</title>
+</head>
+<body>
+    <div class="container">
+        <form action="email.php" method="post">
+            <div class="field" tabindex="1">
+                <label for="username">
+                    <i class="far fa-user"></i>Your Name
+                </label>
+                <input name="username" type="text" placeholder="e.g. john doe" required>
+            </div>
+            <div class="field" tabindex="2">
+                <label for="phone">
+                    <i class="fa-regular fa-address-book"></i>Your Phone
+                </label>
+                <input name="phone" type="text" placeholder="+375 29 123 45 67" required>
+            </div>
+            <div class="field" tabindex="3">
+                <label for="email">
+                    <i class="far fa-envelope"></i>Your Email
+                </label>
+                <input name="email" type="text" placeholder="email@domain.com" required>
+            </div>
+            <div class="field" tabindex="4">
+                <label for="message">
+                    <i class="far fa-edit"></i>Your Topic
+                </label>
+                <input name="topic" placeholder="type here" required></input>
+            </div>
+            <div class="field" tabindex="5">
+                <label for="message">
+                    <i class="far fa-edit"></i>Your Message
+                </label>
+                <textarea name="message" placeholder="type here" required></textarea>
+            </div>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <i class="close far fa-close"></i>
+            <div id="popup-message"></div>
+        </div>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

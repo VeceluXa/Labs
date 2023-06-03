@@ -1,0 +1,226 @@
+/* 
+    Black - #131516
+    Grey - #181a1b
+    White - #d8d4cf
+    Blue - #004daa
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: sans-serif;
+    font-size: 1rem;
+}
+
+@media (min-width: 640px) { header {font-size:1rem;} }
+@media (min-width:960px) { header {font-size:1.2rem;} }
+
+html, body {
+    margin: 0;
+    min-height: 100vh;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: #181a1b;
+    color: #d8d4cf;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding: 10px 20px 10px 20px;
+    background-color: #131516;
+    border-bottom: #d8d4cf solid 1px;
+}
+
+header a {
+    text-decoration: none;
+    color: #d8d4cf;
+}
+
+.home-button {
+    padding: 0;
+}
+
+.nav-link {
+    /* padding: .5rem, .75rem, .5rem, .75rem; */
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    padding-left: .75rem;
+    padding-right: .75rem;
+    border-radius: .25rem;
+}
+
+.nav-link:hover {
+    /* padding: inherit; */
+    background-color: rgb(48, 52, 54);
+    transition-timing-function: cubic-bezier(.4,0,.2,1);
+    transition-duration: .15s;
+}
+
+/* @media (min-width: 640px) { main { margin: 0, 10%, 0, 10%; } } */
+@media (max-width: 960px) { main { 
+    /* margin-left: 10%;
+    margin-right: 10%; */
+    margin: 0 10% 0 10%;
+    gap: 15px;
+} }
+@media (min-width:960px) { main { 
+    /* margin-left: 15%;
+    margin-right: 15%; */
+    margin: 0 25% 0 25%;
+    gap: 25px;
+} }
+
+main {
+    padding: 50px 0 50px 0;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+
+}
+
+main img {
+    width: 100%;
+    height: auto;
+    border-radius: .75rem;
+}
+
+@media (max-width: 960px) { h1 { font-size: 2rem; } }
+@media (min-width: 960px) { h1 { font-size: 3rem; } }
+
+@media (max-width: 480px) { h1 { font-size: 1.5rem; } }
+@media (min-width: 481px) and (max-width: 960px) { h1 { font-size: 2rem; } }
+@media (min-width: 769px) and (max-width: 1024px) { h1 { font-size: 3rem; } }
+
+main h1 {
+    font-weight: 600;
+    font-size: 1.875rem;
+    line-height: 1.3;
+}
+
+main h2 {
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 1.3;
+}
+
+main h3 {
+    font-weight: 600;
+    font-size: 1.25rem;
+    line-height: 1.3;
+}
+
+main p {
+    display: inline;
+    white-space: pre-wrap;
+    word-break: break-word;
+    line-height: 1.5;
+    padding: 0;
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+main li {
+    list-style-position: inside;
+    line-height: 1.5;
+}
+
+main button {
+    width: fit-content;
+    background-color: hsl(221, 84%, 38%);
+    border: none;
+    color:#d8d4cf;
+    padding: .5rem .75rem .5rem .75rem;
+    border-radius: .25rem;
+    font-size: 1.2rem;
+    cursor:pointer;
+}
+
+main button:hover {
+    background-color: hsl(221, 84%, 33%);
+}
+
+footer {
+    /* position: absolute; */
+    margin-top: auto;
+    display: flex;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: auto;
+    width: 100vw;
+    padding: 40px 20px 20px 20px;
+    background-color: #181a1b;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+@media (max-width: 480px) { .copyright { font-size: 0.9rem; } }
+@media (min-width: 481px) and (max-width: 960px) { .copyright { font-size: 1rem; } }
+
+footer p {
+    padding: 0;
+    margin: 0;
+    /* margin-right: 20px; */
+    color: rgb(174, 167, 156);
+    /* font-size: 1rem; */
+    display: table-cell;
+    vertical-align: middle;
+    line-height: 32px;
+}
+
+.copyright {
+    line-height: normal;
+}
+
+.footer-contacts {
+    display: flex;
+    gap: 15px;
+}
+
+.footer-contacts a {
+    text-decoration: none;
+}
+
+.pages-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));;
+    gap: 40px;
+}
+
+.page {
+    text-decoration: none;
+    color: #d8d4cf;
+    background: rgba(255, 255, 255, 0.055);
+    border-radius: 0.25rem;
+}
+
+.page:hover {
+    background: rgb(47, 47, 47);
+}
+
+.cover-container {
+    height: 250px;
+    overflow: hidden;
+}
+
+.page img {
+    height: 100%;
+    border-radius: 0;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+    object-fit: cover;
+}
+
+.page h2 {
+    padding: 10px;
+    padding-top: 5px;
+}
