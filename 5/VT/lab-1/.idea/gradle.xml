@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleMigrationSettings" migrationVersion="1" />
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="gradleHome" value="/usr/share/java/gradle" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/src" />
+            <option value="$PROJECT_DIR$/src/main" />
+            <option value="$PROJECT_DIR$/src/main/java" />
+            <option value="$PROJECT_DIR$/src/main/java/com" />
+            <option value="$PROJECT_DIR$/src/main/java/com/danilovfa" />
+            <option value="$PROJECT_DIR$/src/main/java/com/danilovfa/task1" />
+            <option value="$PROJECT_DIR$/src/main/java/com/danilovfa/task12" />
+            <option value="$PROJECT_DIR$/src/main/java/com/danilovfa/task13" />
+            <option value="$PROJECT_DIR$/src/main/java/com/danilovfa/task14" />
+            <option value="$PROJECT_DIR$/src/main/java/com/danilovfa/task15" />
+            <option value="$PROJECT_DIR$/src/main/java/com/danilovfa/task16" />
+            <option value="$PROJECT_DIR$/src/main/java/com/danilovfa/task2" />
+            <option value="$PROJECT_DIR$/src/main/java/com/danilovfa/task3" />
+            <option value="$PROJECT_DIR$/src/main/java/com/danilovfa/task4" />
+            <option value="$PROJECT_DIR$/src/main/java/com/danilovfa/task5" />
+            <option value="$PROJECT_DIR$/src/main/java/com/danilovfa/task6" />
+            <option value="$PROJECT_DIR$/src/main/java/com/danilovfa/task7" />
+            <option value="$PROJECT_DIR$/src/main/java/com/danilovfa/task8" />
+            <option value="$PROJECT_DIR$/src/main/java/com/danilovfa/task9" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>
