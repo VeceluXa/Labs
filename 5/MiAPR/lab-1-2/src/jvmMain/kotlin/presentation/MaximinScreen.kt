@@ -1,0 +1,139 @@
+package presentation
+
+import androidx.compose.foundation.Canvas
+import androidx.compose.foundation.background
+import androidx.compose.foundation.border
+import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.Button
+import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Text
+import androidx.compose.runtime.*
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.SolidColor
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import domain.centroidOf
+import domain.chooseNewSite
+import domain.model.Cluster
+import domain.model.Point
+import domain.splitForClusters
+import kotlinx.coroutines.delay
+import utils.*
+import java.util.*
+
+@Composable
+fun MaximinScreen() {
+    val random = Random()
+
+    var isStartButtonEnabled by remember { mutableStateOf(true) }
+    var iterationCounter by remember { mutableStateOf(0) }
+
+    var clusters by remember { mutableStateOf<List<Cluster>>(listOf()) }
+    var points = Array(POINTS_COUNT) { Point(random.nextInt(IMAGE_SIZE), random.nextInt(IMAGE_SIZE)) }
+
+    var newSite = points.randomElement()
+    var sites by remember {
+        mutableStateOf(
+            mutableListOf(
+                newSite!!, newSite!!.farthestPointOf(points)
+            )
+        )
+    }
+
+    // Reset
+    if (iterationCounter == 0) {
+        points = Array(POINTS_COUNT) { Point(random.nextInt(IMAGE_SIZE), random.nextInt(IMAGE_SIZE)) }
+        newSite = points.randomElement()
+        sites = mutableListOf(
+            newSite!!, newSite.farthestPointOf(points)
+        )
+        clusters = listOf()
+    }
+
+    LaunchedEffect(iterationCounter) {
+        if (iterationCounter > 0 && isStartButtonEnabled) {
+            clusters = splitForClusters(points, sites.toTypedArray()).toList()
+            while (newSite != null) {
+                newSite = chooseNewSite(clusters.toTypedArray())
+                newSite?.let { newSite ->
+                    sites.add(newSite)
+                    clusters = splitForClusters(points, sites.toTypedArray()).toList()
+
+                    delay(DELAY_MAXIMIN)
+                    iterationCounter++
+                }
+
+                if (newSite == null) {
+                    isStartButtonEnabled = false
+                }
+            }
+        }
+    }
+
+    Text(
+        text = "Итерация $iterationCounter",
+        fontSize = 30.sp,
+        fontWeight = FontWeight.Bold
+    )
+
+    Spacer(Modifier.height(32.dp))
+
+    Canvas(
+        modifier = Modifier
+            .size(400.dp)
+            .background(color = Color.Transparent, shape = RoundedCornerShape(8.dp))
+            .border(
+                width = 2.dp,
+                brush = SolidColor(MaterialTheme.colors.onBackground),
+                shape = RoundedCornerShape(8.dp)
+            )
+            .clip(RoundedCornerShape(8.dp))
+    ) {
+        clusters?.let { clusters ->
+            clusters.forEachIndexed { i, cluster ->
+                cluster.points.forEach { point ->
+                    drawCircle(
+                        brush = SolidColor(colors[i % colors.size]),
+                        radius = 2f,
+                        center = Offset(point.x.toFloat(), point.y.toFloat())
+                    )
+                }
+
+                drawCircle(
+                    brush = SolidColor(Color.Black),
+                    radius = 7f,
+                    center = Offset(cluster.site.x.toFloat(), cluster.site.y.toFloat())
+                )
+            }
+        }
+    }
+
+    Spacer(Modifier.height(32.dp))
+
+    Row {
+        Button(
+            onClick = {
+                iterationCounter = 0
+                isStartButtonEnabled = true
+            }
+        ) {
+            Text("Reset")
+        }
+
+        Spacer(Modifier.width(32.dp))
+
+        Button(
+            onClick = {
+                iterationCounter++
+            },
+            enabled = isStartButtonEnabled
+        ) {
+            Text("Start")
+        }
+    }
+}
